@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """The main module for the lockboxes project"""
 
+
 def canUnlockAll(boxes):
     """Determines if all the boxes can be unlocked"""
     if (len(boxes) == 0):
