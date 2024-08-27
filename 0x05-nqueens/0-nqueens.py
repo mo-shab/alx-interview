@@ -18,7 +18,7 @@ def solveNQueens(n: int) -> List[List[str]]:
             copy = ["".join(row) for row in board]
             res.append(copy)
             return
-  
+
         for c in range(n):
             if c in col or (r + c) in posDiag or (r - c) in negDiag:
                 continue
@@ -38,6 +38,7 @@ def solveNQueens(n: int) -> List[List[str]]:
     backtrack(0)
     return res
 
+
 def convert_solution(board: List[str]) -> List[List[int]]:
     """Methode to convert board from list of str to List of int"""
     result = []
@@ -45,7 +46,7 @@ def convert_solution(board: List[str]) -> List[List[int]]:
         for c in range(len(board[r])):
             if board[r][c] == 'Q':
                 result.append([r, c])
-                break  # Move to the next row once the queen is found in the current row
+                break
     return result
 
 
@@ -56,11 +57,11 @@ def isvalidargs() -> int:
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
         exit(1)
-    
+
     # N must be an integer greater or equal to 4
     try:
         n = int(sys.argv[1])
-    except:
+    except Exception:
         print("N must be a number")
         exit(1)
     if n < 4:
