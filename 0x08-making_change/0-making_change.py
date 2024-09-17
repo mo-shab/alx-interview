@@ -3,6 +3,7 @@
     - Fewest Coins to make change
 """
 
+
 def makeChange(coins, total):
     """Make Change Function
         - Get The coins, Total
@@ -22,4 +23,3 @@ def makeChange(coins, total):
     if i == -1 and total != 0:
         return -1
     return len(ans)
- 
