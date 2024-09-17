@@ -8,7 +8,7 @@ def makeChange(coins, total):
         - Get The coins, Total
         - Return fewest number
     """
-    if( total <= 0):
+    if(total <= 0):
         return -1
     n = len(coins)
     ans = []
