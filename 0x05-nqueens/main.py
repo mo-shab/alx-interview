@@ -71,8 +71,7 @@ def isvalidargs() -> int:
 
 
 if __name__ == "__main__":
-    
-    #converted_solutions = [convert_solution(board) for board in solutions]
-    for i in range(int(sys.argv[1])):
-        solution = solveNQueens(i)
-        print(f"Numbers of possibilities for {i} * {i} shess board, are {len(solution)}")
+    solutions = solveNQueens(isvalidargs())
+    converted_solutions = [convert_solution(board) for board in solutions]
+    for solution in converted_solutions:
+        print(solution)
