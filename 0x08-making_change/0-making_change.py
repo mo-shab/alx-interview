@@ -5,21 +5,16 @@
 
 
 def makeChange(coins, total):
-    """Make Change Function
-        - Get The coins, Total
-        - Return fewest number
-    """
-    if(total <= 0):
-        return -1
-    n = len(coins)
-    ans = []
+    """Returns the fewest number of coins needed to make change"""
+    if total <= 0:
+        return 0
 
-    i = n - 1
-    while(i >= 0):
-        while(total >= coins[i]):
-            total -= coins[i]
-            ans.append(coins[i])
-        i -= 1
-    if i == -1 and total != 0:
-        return -1
-    return len(ans)
+    dp = [float('inf')] * (total + 1)
+    dp[0] = 0
+
+    for i in range(1, total + 1):
+        for coin in coins:
+            if i - coin >= 0:
+                dp[i] = min(dp[i], dp[i - coin] + 1)
+
+    return dp[total] if dp[total] != float('inf') else -1
