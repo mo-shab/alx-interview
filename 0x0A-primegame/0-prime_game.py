@@ -5,6 +5,8 @@ def isWinner(x, nums):
     """Function for Prime Number, is winner"""
     # Function to generate prime numbers up to the maximum n
     def sieve(n):
+        if n < 2:
+            return []
         primes = [True] * (n + 1)
         primes[0] = primes[1] = False
         for i in range(2, int(n ** 0.5) + 1):
