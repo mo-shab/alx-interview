@@ -1,6 +1,8 @@
 #!/usr/bin/python3
+"""Prime Number"""
 
 def isWinner(x, nums):
+    """Function for Prime Number, is winner"""
     # Function to generate prime numbers up to the maximum n
     def sieve(n):
         primes = [True] * (n + 1)
@@ -17,6 +19,7 @@ def isWinner(x, nums):
 
     # Function to determine the winner for a single game with n
     def play_game(n):
+        """Function to play game"""
         if n == 1:
             return "Ben"  # No prime numbers, Maria can't make a move
 
